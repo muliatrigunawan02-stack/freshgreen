@@ -1,0 +1,13 @@
+{
+  "providers": ["php", "node"],
+  "variables": {
+    "NIXPACKS_DEBIAN_RELEASE": "bookworm"
+  },
+  "phases": {
+    "build": {
+      "cmds": [
+        "npm run build"
+      ]
+    }
+  }
+}
