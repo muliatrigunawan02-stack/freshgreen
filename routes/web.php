@@ -8,25 +8,35 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-// Halaman Utama & Detail Produk
-Route::get('/', [ProductController::class, 'index'])->name('home');
+// 1. Halaman Utama (Home / Hero) -> Menggunakan view welcome.blade.php
+Route::get('/', function () {
+    return view('welcome');
+})->name('home');
+
+// 2. Halaman About (Tentang Kami & Peta Lokasi) -> Menggunakan view about.blade.php
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
+
+// 3. Halaman Katalog Produk & Detail Produk
+Route::get('/produk', [ProductController::class, 'index'])->name('products.index');
 Route::get('/product/{slug}', [ProductController::class, 'show'])->name('products.show');
 
-// Halaman Kontak
+// 4. Halaman Kontak
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::post('/contact', [ContactController::class, 'send'])->name('contact.send');
 
-// Keranjang Belanja
+// 5. Keranjang Belanja
 Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
 Route::post('/cart/add/{id}', [CartController::class, 'add'])->name('cart.add');
 Route::delete('/cart/remove/{id}', [CartController::class, 'remove'])->name('cart.remove');
 
-// Dashboard User (Memperbaiki Error Route Dashboard)
+// 6. Dashboard User
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-// Fitur Pengguna Login
+// 7. Fitur Pengguna Login (Checkout, Profil, & Admin)
 Route::middleware('auth')->group(function () {
     // Checkout
     Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
