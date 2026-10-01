@@ -14,13 +14,14 @@ class ProductController extends Controller
     // TAMPILAN DEPAN / SISI PEMBELI (PUBLIC)
     // ==========================================
 
-    // Halaman Utam / Landing Page Toko
+    // Halaman Katalog Produk Segar (Daftar Produk)
     public function index()
     {
         $categories = Category::all();
         $products = Product::with('category')->latest()->get();
 
-        return view('welcome', compact('categories', 'products'));
+        // Mengarahkan ke view katalog produk
+        return view('products.index', compact('categories', 'products'));
     }
 
     // Halaman Detail Produk

@@ -8,17 +8,23 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-// 1. Halaman Utama (Home / Hero) -> Menggunakan view welcome.blade.php
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+*/
+
+// 1. Halaman Utama (Home / Hero)
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-// 2. Halaman About (Tentang Kami & Peta Lokasi) -> Menggunakan view about.blade.php
+// 2. Halaman About (Tentang Kami & Peta Lokasi)
 Route::get('/about', function () {
     return view('about');
 })->name('about');
 
-// 3. Halaman Katalog Produk & Detail Produk
+// 3. Halaman Katalog Produk & Detail Produk (Publik)
 Route::get('/produk', [ProductController::class, 'index'])->name('products.index');
 Route::get('/product/{slug}', [ProductController::class, 'show'])->name('products.show');
 
@@ -31,13 +37,14 @@ Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
 Route::post('/cart/add/{id}', [CartController::class, 'add'])->name('cart.add');
 Route::delete('/cart/remove/{id}', [CartController::class, 'remove'])->name('cart.remove');
 
-// 6. Dashboard User
+// 6. Dashboard User / Admin
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-// 7. Fitur Pengguna Login (Checkout, Profil, & Admin)
+// 7. Fitur Pengguna Autentikasi (Checkout, Profil, & Kelola Admin)
 Route::middleware('auth')->group(function () {
+    
     // Checkout
     Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
     Route::post('/checkout', [CheckoutController::class, 'process'])->name('checkout.process');
@@ -47,15 +54,16 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    // Admin CRUD Produk
+    // Admin CRUD Produk (Menggunakan AdminProductController)
     Route::prefix('admin')->name('admin.')->group(function () {
-        Route::get('/products', [ProductController::class, 'adminIndex'])->name('products.index');
-        Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
-        Route::post('/products', [ProductController::class, 'store'])->name('products.store');
-        Route::get('/products/{id}/edit', [ProductController::class, 'edit'])->name('products.edit');
-        Route::put('/products/{id}', [ProductController::class, 'update'])->name('products.update');
-        Route::delete('/products/{id}', [ProductController::class, 'destroy'])->name('products.destroy');
+        Route::get('/products', [AdminProductController::class, 'index'])->name('products.index');
+        Route::get('/products/create', [AdminProductController::class, 'create'])->name('products.create');
+        Route::post('/products', [AdminProductController::class, 'store'])->name('products.store');
+        Route::get('/products/{id}/edit', [AdminProductController::class, 'edit'])->name('products.edit');
+        Route::put('/products/{id}', [AdminProductController::class, 'update'])->name('products.update');
+        Route::delete('/products/{id}', [AdminProductController::class, 'destroy'])->name('products.destroy');
     });
+
 });
 
 require __DIR__.'/auth.php';
