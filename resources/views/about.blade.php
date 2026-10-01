@@ -30,7 +30,6 @@
 
     <!-- Main Content -->
     <main class="max-w-6xl mx-auto px-4 py-12 w-full flex-grow">
-        <!-- Hero Section About -->
         <div class="text-center max-w-3xl mx-auto mb-12">
             <h1 class="text-4xl font-extrabold text-gray-900 mb-4">Tentang FreshGreen</h1>
             <p class="text-lg text-gray-600 leading-relaxed">
@@ -38,7 +37,6 @@
             </p>
         </div>
 
-        <!-- Section Visi Misi / Deskripsi -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
             <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
                 <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center text-emerald-600 font-bold text-xl mb-4">🌱</div>
@@ -56,7 +54,7 @@
             </div>
         </div>
 
-        <!-- Section Titik Lokasi Google Maps -->
+        <!-- Titik Lokasi Google Maps -->
         <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100">
             <h2 class="text-2xl font-bold text-gray-800 mb-2">Lokasi Toko & Gudang Kami</h2>
             <p class="text-gray-500 mb-6 text-sm">Kunjungi lokasi fisik kami atau titik distribusi utama untuk koordinasi pasokan.</p>
@@ -80,8 +78,8 @@
         &copy; {{ date('Y') }} FreshGreen. All rights reserved.
     </footer>
 
-    <!-- Gelembung WhatsApp Melayang (Floating WA Button) -->
-    <a href="https://wa.me/6281234567890?text=Halo%20FreshGreen,%20saya%20ingin%20bertanya%20mengenai%20produk%20sayur" 
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/62895384204539?text=Halo%20FreshGreen,%20saya%20ingin%20bertanya%20mengenai%20produk%20sayur" 
        target="_blank" 
        rel="noopener noreferrer" 
        class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white p-4 rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 group"

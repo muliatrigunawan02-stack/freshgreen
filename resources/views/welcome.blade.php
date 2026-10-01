@@ -4,132 +4,75 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>FreshGreen - Belanja Sayur Segar</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-white text-gray-800 font-sans antialiased scroll-smooth">
+<body class="bg-slate-50 text-gray-800 font-sans antialiased min-h-screen flex flex-col justify-between">
 
-    <!-- Navbar Atas (Dark Navigation Bar) -->
-    <nav class="bg-[#1e232a] text-white py-3.5 px-6 md:px-12 sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto flex items-center justify-between">
-            
-            <!-- Logo FreshGreen (Gambar JPG) -->
-            <a href="{{ route('home') }}" class="flex items-center space-x-3 hover:opacity-90">
-                <img src="{{ asset('images/FreshGreen.jpeg') }}" alt="FreshGreen Logo" class="w-8 h-8 rounded-full object-cover">
-                <span class="text-emerald-500 font-extrabold tracking-wider text-lg">FRESH-GREEN</span>
+    <!-- Header Navbar -->
+    <header class="bg-slate-900 text-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <a href="{{ route('home') }}" class="flex items-center space-x-2 text-emerald-400 font-bold text-xl tracking-wide">
+                <span>FRESH-GREEN</span>
             </a>
-
-            <!-- Menu Navigasi & Tombol Login -->
-            <div class="flex items-center space-x-6 text-sm font-medium">
-                <a href="{{ route('home') }}" class="text-gray-200 hover:text-white transition">Home</a>
-                <a href="#about" class="text-gray-300 hover:text-white transition">About</a>
-                <a href="{{ route('contact') }}" class="text-gray-300 hover:text-white transition">Contact</a>
-                <a href="#produk-segar" class="text-gray-300 hover:text-white transition">Produk Segar</a>
-                
-                @auth
-                    <a href="{{ route('dashboard') }}" class="bg-emerald-600 hover:bg-emerald-700 text-white font-medium px-4 py-1.5 rounded-md transition text-xs">
-                        Dashboard
-                    </a>
-                @else
-                    <a href="{{ route('login') }}" class="bg-emerald-600 hover:bg-emerald-700 text-white font-medium px-4 py-1.5 rounded-md transition text-xs">
-                        Login Admin
-                    </a>
-                @endauth
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                <a href="{{ route('home') }}" class="text-emerald-400 font-semibold border-b-2 border-emerald-400 pb-1">Home</a>
+                <a href="{{ route('about') }}" class="text-gray-300 hover:text-emerald-400 transition">About</a>
+                <a href="{{ route('contact') }}" class="text-gray-300 hover:text-emerald-400 transition">Contact</a>
+                <a href="{{ route('products.index') }}" class="text-gray-300 hover:text-emerald-400 transition">Produk Segar</a>
+            </nav>
+            <div>
+                <a href="/login" class="bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition">
+                    Login Admin
+                </a>
             </div>
-
         </div>
-    </nav>
+    </header>
 
     <!-- Hero Section -->
-    <main class="min-h-[calc(100vh-80px)] flex flex-col justify-center items-center text-center px-4 py-16">
-        
-        <!-- Icon/Gambar Bulat di Tengah -->
-        <div class="w-24 h-24 rounded-full overflow-hidden shadow-lg shadow-emerald-500/20 mb-8 border-2 border-emerald-500/20">
-            <img src="{{ asset('images/FreshGreen.jpeg') }}" alt="FreshGreen Icon" class="w-full h-full object-cover">
+    <main class="flex-grow flex items-center justify-center py-16 px-4">
+        <div class="text-center max-w-3xl mx-auto">
+            <div class="w-24 h-24 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6 shadow-inner">
+                <span class="text-4xl">🥦</span>
+            </div>
+
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight mb-4">
+                FreshGreen Belanja Sayur Segar
+            </h1>
+            
+            <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
+                Platform terintegrasi untuk mendata, memonitor, dan melacak informasi pasokan, harga, serta belanja sayuran dan buah-buahan segar secara praktis dan terstruktur.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="{{ route('products.index') }}" class="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-6 py-3 rounded-xl shadow-lg transition duration-200 flex items-center justify-center gap-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    Jelajahi Produk Segar
+                </a>
+                <a href="{{ route('about') }}" class="w-full sm:w-auto bg-white border border-gray-300 hover:bg-gray-50 text-gray-700 font-semibold px-6 py-3 rounded-xl shadow-sm transition duration-200">
+                    Tentang Kami
+                </a>
+            </div>
         </div>
-
-        <!-- Judul Utama -->
-        <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight leading-tight max-w-3xl mb-6">
-            FreshGreen Belanja Sayur Segar
-        </h1>
-
-        <!-- Subtitle Singkat -->
-        <p class="text-gray-500 text-base md:text-lg max-w-2xl font-normal leading-relaxed mb-8">
-            Platform terintegrasi untuk mendata, memonitor, dan melacak informasi pasokan, harga, serta belanja sayuran dan buah-buahan segar secara praktis dan terstruktur.
-        </p>
-
-        <!-- Tombol Aksi -->
-        <div class="flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 sm:space-x-4">
-            <!-- Tombol Jelajahi Produk -->
-            <a href="#produk-segar" class="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-700 text-white font-medium px-6 py-3 rounded-lg shadow-md transition flex items-center justify-center space-x-2 text-sm">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                </svg>
-                <span>Jelajahi Produk Segar</span>
-            </a>
-
-            <!-- Tombol Tentang Kami -->
-            <a href="#about" class="w-full sm:w-auto border border-gray-300 hover:border-gray-400 text-gray-700 font-medium px-6 py-3 rounded-lg transition text-sm">
-                Tentang Kami
-            </a>
-        </div>
-
     </main>
 
-    <!-- Section About (Tentang Kami) -->
-    <section id="about" class="bg-emerald-50/50 py-20 px-4 sm:px-6 lg:px-8 border-t border-emerald-100">
-        <div class="max-w-4xl mx-auto">
-            <div class="text-center mb-10">
-                <span class="text-emerald-600 font-extrabold text-xs tracking-wider uppercase bg-emerald-100 px-3 py-1 rounded-full">Tentang FreshGreen</span>
-                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mt-3">Solusi Praktis Bahan Makanan Segar</h2>
-            </div>
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 py-6 text-center text-gray-500 text-sm">
+        &copy; {{ date('Y') }} FreshGreen. All rights reserved.
+    </footer>
 
-            <!-- Teks Keterangan Tentang Kami -->
-            <div class="bg-white p-8 md:p-10 rounded-3xl border border-emerald-100 shadow-sm space-y-6 text-gray-600 leading-relaxed text-base md:text-lg">
-                <p>
-                    <strong class="text-emerald-700 font-bold">Fresh Green</strong> adalah website belanja online yang menyediakan berbagai kebutuhan bahan makanan segar untuk kehidupan sehari-hari. Fresh Green hadir sebagai solusi praktis bagi masyarakat yang ingin membeli sayuran, buah-buahan, dan ikan segar dengan mudah tanpa harus datang langsung ke pasar atau toko.
-                </p>
-                <p>
-                    Fresh Green berdomisili di wilayah <span class="font-semibold text-gray-800">Jalan Suryakencana, Pamulang Barat</span>, dan melayani kebutuhan masyarakat sekitar serta wilayah yang dapat dijangkau oleh layanan pengantaran. Dengan memanfaatkan teknologi digital, Fresh Green membantu pelanggan mendapatkan bahan makanan segar dengan cara yang lebih praktis, mudah, dan efisien.
-                </p>
-                <p>
-                    Melalui website Fresh Green, pelanggan dapat menemukan berbagai pilihan produk dalam satu tempat.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section Katalog Produk Segar -->
-    <section id="produk-segar" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-gray-100">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900">Katalog Produk Segar</h2>
-            <p class="text-gray-500 mt-2 text-sm">Pilih produk berkualitas langsung dari mitra FreshGreen</p>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            @forelse($products ?? [] as $product)
-                <div class="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden hover:shadow-md transition">
-                    <img src="{{ $product->image ?? 'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=500' }}" class="w-full h-48 object-cover">
-                    <div class="p-5">
-                        <span class="text-xs bg-emerald-100 text-emerald-800 font-bold px-2.5 py-0.5 rounded-full">
-                            {{ $product->category->name ?? 'Segar' }}
-                        </span>
-                        <h3 class="font-bold text-gray-900 mt-2 text-lg">{{ $product->name }}</h3>
-                        <p class="text-emerald-600 font-extrabold mt-1 text-base">
-                            Rp {{ number_format($product->price, 0, ',', '.') }} <span class="text-xs text-gray-500 font-normal">/ {{ $product->unit }}</span>
-                        </p>
-                        <a href="{{ route('products.show', $product->slug ?? $product->id) }}" class="mt-4 block w-full text-center bg-emerald-50 hover:bg-emerald-100 text-emerald-700 font-bold py-2 rounded-xl text-xs transition">
-                            Lihat Detail
-                        </a>
-                    </div>
-                </div>
-            @empty
-                <div class="col-span-full text-center py-8 text-gray-400">
-                    Belum ada produk yang tersedia saat ini.
-                </div>
-            @endforelse
-        </div>
-    </section>
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/6281234567890?text=Halo%20FreshGreen,%20saya%20ingin%20bertanya%20mengenai%20produk%20sayur" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white p-4 rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 group"
+       title="Chat via WhatsApp">
+        <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+        </svg>
+        <span class="absolute right-16 top-2 bg-gray-900 text-white text-xs px-3 py-1.5 rounded-md shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+            Chat via WhatsApp
+        </span>
+    </a>
 
 </body>
 </html>
