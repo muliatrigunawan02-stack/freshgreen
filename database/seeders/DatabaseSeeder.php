@@ -40,9 +40,9 @@ class DatabaseSeeder extends Seeder
             'name'        => 'Bayam Hijau Organik',
             'slug'        => Str::slug('Bayam Hijau Organik'),
             'description' => 'Bayam segar dipetik langsung dari petani lokal FreshGreen.',
-            'price'       => 25000,
+            'price'       => 15000,
             'stock'       => 50,
-            'unit'        => 'kg',
+            'unit'        => 'ikat',
             'image'       => 'images/Bayam Organik.jpeg'
         ]);
 
@@ -51,9 +51,9 @@ class DatabaseSeeder extends Seeder
             'name'        => 'Kangkung',
             'slug'        => Str::slug('Kangkung'),
             'description' => 'Kangkung segar dipetik langsung dari petani berkualitas.',
-            'price'       => 30000,
+            'price'       => 12000,
             'stock'       => 50,
-            'unit'        => 'kg',
+            'unit'        => 'ikat',
             'image'       => 'images/Kangkung.jpeg'
         ]);
 
@@ -62,9 +62,9 @@ class DatabaseSeeder extends Seeder
             'name'        => 'Sawi Hijau',
             'slug'        => Str::slug('Sawi Hijau'),
             'description' => 'Sawi Hijau segar dipanen langsung dari petani lokal FreshGreen.',
-            'price'       => 25000,
+            'price'       => 15000,
             'stock'       => 50,
-            'unit'        => 'kg',
+            'unit'        => 'ikat',
             'image'       => 'image/Sawi Hijau.jpeg'
         ]);
 
@@ -73,9 +73,9 @@ class DatabaseSeeder extends Seeder
             'name'        => 'Sawi Putih',
             'slug'        => Str::slug('Sawi Putih'),
             'description' => 'Sawi Putih segar dipanen langsung dari petani lokal FreshGreen.',
-            'price'       => 25000,
+            'price'       => 17000,
             'stock'       => 50,
-            'unit'        => 'kg',
+            'unit'        => 'ikat',
             'image'       => 'image/Sawi Putih.jpeg'
         ]);
 
@@ -84,9 +84,9 @@ class DatabaseSeeder extends Seeder
             'name'        => 'Selada Segar',
             'slug'        => Str::slug('Selada Segar'),
             'description' => 'Selada segar dipetik langsung dari petani lokal FreshGreen.',
-            'price'       => 20000,
+            'price'       => 8000,
             'stock'       => 50,
-            'unit'        => 'kg',
+            'unit'        => 'ikat',
             'image'       => 'image/Selada.jpeg'
         ]);
 
@@ -95,7 +95,7 @@ class DatabaseSeeder extends Seeder
             'name'        => 'Kubis (Kol)',
             'slug'        => Str::slug('Kubis Kol'),
             'description' => 'Kubis segar dipanen langsung dari petani lokal FreshGreen.',
-            'price'       => 22000,
+            'price'       => 19000,
             'stock'       => 50,
             'unit'        => 'kg',
             'image'       => 'image/Kubis.jpeg'
@@ -107,7 +107,7 @@ class DatabaseSeeder extends Seeder
             'name'        => 'Apel Fuji Manis',
             'slug'        => Str::slug('Apel Fuji Manis'),
             'description' => 'Apel fuji renyah dan manis, cocok untuk konsumsi harian keluarga.',
-            'price'       => 35000,
+            'price'       => 25000,
             'stock'       => 25,
             'unit'        => 'kg',
             'image'       => 'image/Apel Fuji.jpeg'
@@ -118,7 +118,7 @@ class DatabaseSeeder extends Seeder
             'name'        => 'Semangka Merah',
             'slug'        => Str::slug('Semangka Merah'),
             'description' => 'Semangka segar yang manis siap dikonsumsi untuk keluarga sehat.',
-            'price'       => 65000,
+            'price'       => 25000,
             'stock'       => 50,
             'unit'        => 'kg',
             'image'       => 'image/Semangka.jpeg'
@@ -129,7 +129,7 @@ class DatabaseSeeder extends Seeder
             'name'        => 'Melon Segar',
             'slug'        => Str::slug('Melon Segar'),
             'description' => 'Melon segar yang manis dan siap untuk dikonsumsi oleh keluarga sehat.',
-            'price'       => 75000,
+            'price'       => 22000,
             'stock'       => 50,
             'unit'        => 'kg',
             'image'       => 'image/Melon.jpeg'
@@ -140,7 +140,7 @@ class DatabaseSeeder extends Seeder
             'name'        => 'Mangga Harumanis',
             'slug'        => Str::slug('Mangga Harumanis'),
             'description' => 'Mangga yang manis cocok untuk dikonsumsi dengan cuaca yang sedang panas.',
-            'price'       => 50000,
+            'price'       => 20000,
             'stock'       => 50,
             'unit'        => 'kg',
             'image'       => 'image/Mangga Harumanis.jpeg'
@@ -151,7 +151,7 @@ class DatabaseSeeder extends Seeder
             'name'        => 'Jeruk Mandarin',
             'slug'        => Str::slug('Jeruk Mandarin'),
             'description' => 'Jeruk segar dan manis siap dikonsumsi di cuaca panas.',
-            'price'       => 45000,
+            'price'       => 23000,
             'stock'       => 50,
             'unit'        => 'kg',
             'image'       => 'image/Jeruk Mandarin.jpeg'

@@ -30,9 +30,9 @@ class ProductSeeder extends Seeder
             'name'        => 'Bayam Hijau Organik',
             'slug'        => Str::slug('Bayam Hijau Organik'),
             'description' => 'Bayam segar dipetik langsung dari petani lokal FreshGreen.',
-            'price'       => 25000,
+            'price'       => 15000,
             'stock'       => 50,
-            'unit'        => 'kg',
+            'unit'        => 'ikat',
             'image'       => 'images/Bayam Organik.jpeg'
         ]);
 
@@ -41,9 +41,9 @@ class ProductSeeder extends Seeder
             'name'        => 'Kangkung',
             'slug'        => Str::slug('Kangkung'),
             'description' => 'Kangkung segar dipetik langsung dari petani berkualitas.',
-            'price'       => 30000,
+            'price'       => 12000,
             'stock'       => 50,
-            'unit'        => 'kg',
+            'unit'        => 'ikat',
             'image'       => 'images/Kangkung.jpeg'
         ]);
 
@@ -52,10 +52,10 @@ class ProductSeeder extends Seeder
             'name'        => 'Sawi Hijau',
             'slug'        => Str::slug('Sawi Hijau'),
             'description' => 'Sawi Hijau segar dipanen langsung dari petani lokal FreshGreen.',
-            'price'       => 25000,
+            'price'       => 15000,
             'stock'       => 50,
-            'unit'        => 'kg',
-            'image'       => 'images/Sawi Hijau.jpeg'
+            'unit'        => 'ikat',
+            'image'       => 'image/Sawi Hijau.jpeg'
         ]);
 
         Product::create([
@@ -63,10 +63,10 @@ class ProductSeeder extends Seeder
             'name'        => 'Sawi Putih',
             'slug'        => Str::slug('Sawi Putih'),
             'description' => 'Sawi Putih segar dipanen langsung dari petani lokal FreshGreen.',
-            'price'       => 25000,
+            'price'       => 17000,
             'stock'       => 50,
-            'unit'        => 'kg',
-            'image'       => 'images/Sawi Putih.jpeg'
+            'unit'        => 'ikat',
+            'image'       => 'image/Sawi Putih.jpeg'
         ]);
 
         Product::create([
@@ -74,10 +74,10 @@ class ProductSeeder extends Seeder
             'name'        => 'Selada Segar',
             'slug'        => Str::slug('Selada Segar'),
             'description' => 'Selada segar dipetik langsung dari petani lokal FreshGreen.',
-            'price'       => 20000,
+            'price'       => 8000,
             'stock'       => 50,
-            'unit'        => 'kg',
-            'image'       => 'images/Selada.jpeg'
+            'unit'        => 'ikat',
+            'image'       => 'image/Selada.jpeg'
         ]);
 
         Product::create([
@@ -85,22 +85,22 @@ class ProductSeeder extends Seeder
             'name'        => 'Kubis (Kol)',
             'slug'        => Str::slug('Kubis Kol'),
             'description' => 'Kubis segar dipanen langsung dari petani lokal FreshGreen.',
-            'price'       => 22000,
+            'price'       => 19000,
             'stock'       => 50,
             'unit'        => 'kg',
-            'image'       => 'images/Kubis.jpeg'
+            'image'       => 'image/Kubis.jpeg'
         ]);
 
-        // 4. Data Produk Buah-Buahan
+        // 5. Data Produk Buah-Buahan
         Product::create([
             'category_id' => $buah->id,
             'name'        => 'Apel Fuji Manis',
             'slug'        => Str::slug('Apel Fuji Manis'),
             'description' => 'Apel fuji renyah dan manis, cocok untuk konsumsi harian keluarga.',
-            'price'       => 35000,
+            'price'       => 25000,
             'stock'       => 25,
             'unit'        => 'kg',
-            'image'       => 'images/Apel Fuji.jpeg'
+            'image'       => 'image/Apel Fuji.jpeg'
         ]);
 
         Product::create([
@@ -108,10 +108,10 @@ class ProductSeeder extends Seeder
             'name'        => 'Semangka Merah',
             'slug'        => Str::slug('Semangka Merah'),
             'description' => 'Semangka segar yang manis siap dikonsumsi untuk keluarga sehat.',
-            'price'       => 65000,
+            'price'       => 25000,
             'stock'       => 50,
             'unit'        => 'kg',
-            'image'       => 'images/Semangka.jpeg'
+            'image'       => 'image/Semangka.jpeg'
         ]);
 
         Product::create([
@@ -119,10 +119,10 @@ class ProductSeeder extends Seeder
             'name'        => 'Melon Segar',
             'slug'        => Str::slug('Melon Segar'),
             'description' => 'Melon segar yang manis dan siap untuk dikonsumsi oleh keluarga sehat.',
-            'price'       => 75000,
+            'price'       => 22000,
             'stock'       => 50,
             'unit'        => 'kg',
-            'image'       => 'images/Melon.jpeg'
+            'image'       => 'image/Melon.jpeg'
         ]);
 
         Product::create([
@@ -130,10 +130,10 @@ class ProductSeeder extends Seeder
             'name'        => 'Mangga Harumanis',
             'slug'        => Str::slug('Mangga Harumanis'),
             'description' => 'Mangga yang manis cocok untuk dikonsumsi dengan cuaca yang sedang panas.',
-            'price'       => 50000,
+            'price'       => 20000,
             'stock'       => 50,
             'unit'        => 'kg',
-            'image'       => 'images/Mangga Harumanis.jpeg'
+            'image'       => 'image/Mangga Harumanis.jpeg'
         ]);
 
         Product::create([
@@ -141,10 +141,10 @@ class ProductSeeder extends Seeder
             'name'        => 'Jeruk Mandarin',
             'slug'        => Str::slug('Jeruk Mandarin'),
             'description' => 'Jeruk segar dan manis siap dikonsumsi di cuaca panas.',
-            'price'       => 45000,
+            'price'       => 23000,
             'stock'       => 50,
             'unit'        => 'kg',
-            'image'       => 'images/Jeruk Mandarin.jpeg'
+            'image'       => 'image/Jeruk Mandarin.jpeg'
         ]);
     }
 }
