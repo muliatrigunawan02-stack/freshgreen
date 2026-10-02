@@ -55,7 +55,7 @@ class ProductSeeder extends Seeder
             'price'       => 15000,
             'stock'       => 50,
             'unit'        => 'ikat',
-            'image'       => 'image/Sawi Hijau.jpeg'
+            'image'       => 'images/Sawi Hijau.jpeg'
         ]);
 
         Product::create([
@@ -66,7 +66,7 @@ class ProductSeeder extends Seeder
             'price'       => 17000,
             'stock'       => 50,
             'unit'        => 'ikat',
-            'image'       => 'image/Sawi Putih.jpeg'
+            'image'       => 'images/Sawi Putih.jpeg'
         ]);
 
         Product::create([
@@ -77,7 +77,7 @@ class ProductSeeder extends Seeder
             'price'       => 8000,
             'stock'       => 50,
             'unit'        => 'ikat',
-            'image'       => 'image/Selada.jpeg'
+            'image'       => 'images/Selada.jpeg'
         ]);
 
         Product::create([
@@ -88,7 +88,7 @@ class ProductSeeder extends Seeder
             'price'       => 19000,
             'stock'       => 50,
             'unit'        => 'kg',
-            'image'       => 'image/Kubis.jpeg'
+            'image'       => 'images/Kubis.jpeg'
         ]);
 
         // 5. Data Produk Buah-Buahan
@@ -100,7 +100,7 @@ class ProductSeeder extends Seeder
             'price'       => 25000,
             'stock'       => 25,
             'unit'        => 'kg',
-            'image'       => 'image/Apel Fuji.jpeg'
+            'image'       => 'images/Apel Fuji.jpeg'
         ]);
 
         Product::create([
@@ -111,7 +111,7 @@ class ProductSeeder extends Seeder
             'price'       => 25000,
             'stock'       => 50,
             'unit'        => 'kg',
-            'image'       => 'image/Semangka.jpeg'
+            'image'       => 'images/Semangka.jpeg'
         ]);
 
         Product::create([
@@ -122,7 +122,7 @@ class ProductSeeder extends Seeder
             'price'       => 22000,
             'stock'       => 50,
             'unit'        => 'kg',
-            'image'       => 'image/Melon.jpeg'
+            'image'       => 'images/Melon.jpeg'
         ]);
 
         Product::create([
@@ -133,7 +133,7 @@ class ProductSeeder extends Seeder
             'price'       => 20000,
             'stock'       => 50,
             'unit'        => 'kg',
-            'image'       => 'image/Mangga Harumanis.jpeg'
+            'image'       => 'images/Mangga Harumanis.jpeg'
         ]);
 
         Product::create([
@@ -144,7 +144,7 @@ class ProductSeeder extends Seeder
             'price'       => 23000,
             'stock'       => 50,
             'unit'        => 'kg',
-            'image'       => 'image/Jeruk Mandarin.jpeg'
+            'image'       => 'images/Jeruk Mandarin.jpeg'
         ]);
     }
 }
