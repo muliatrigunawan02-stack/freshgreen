@@ -96,7 +96,6 @@
                 <div class="col-span-full text-center py-12 bg-white rounded-2xl border border-dashed border-gray-300">
                     <p class="text-gray-500 text-sm">Belum ada data produk yang tersedia.</p>
                 </div>
-            @empty
             @endforelse
 
         </div>
