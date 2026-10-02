@@ -14,10 +14,19 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <a href="{{ route('home') }}" class="flex items-center space-x-3 text-emerald-400 font-bold text-xl tracking-wide">
                 <!-- Logo Gambar Kecil di Navbar -->
-                @if(file_exists(public_path('images/logo.jpeg')))
-                    <img src="{{ asset('images/logo.jpeg') }}" alt="FreshGreen Logo" class="w-8 h-8 object-contain">
-                @elseif(file_exists(public_path('image/logo.jpeg')))
-                    <img src="{{ asset('image/logo.jpeg') }}" alt="FreshGreen Logo" class="w-8 h-8 object-contain">
+                @php
+                    $logoPath = null;
+                    if (file_exists(public_path('images/logo.jpeg'))) {
+                        $logoPath = 'images/logo.jpeg';
+                    } elseif (file_exists(public_path('image/logo.jpeg'))) {
+                        $logoPath = 'image/logo.jpeg';
+                    } elseif (file_exists(public_path('images/logo.png'))) {
+                        $logoPath = 'images/logo.png';
+                    }
+                @endphp
+
+                @if($logoPath)
+                    <img src="{{ asset($logoPath) }}" alt="FreshGreen Logo" class="w-8 h-8 object-contain">
                 @else
                     <span class="text-2xl">🥦</span>
                 @endif
@@ -51,16 +60,14 @@
         <!-- HERO SECTION -->
         <section class="py-16 md:py-24 px-4 text-center">
             <div class="max-w-3xl mx-auto">
-                <!-- Logo Gambar Utama / Ikona Brokoli -->
+                <!-- Logo Gambar Utama / Icon Brokoli -->
                 <div class="w-24 h-24 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6 shadow-inner overflow-hidden p-2">
-                    @if(file_exists(public_path('images/logo.jpeg')))
-                        <img src="{{ asset('images/logo.jpeg') }}" alt="FreshGreen Logo" class="w-full h-full object-contain">
-                    @elseif(file_exists(public_path('image/logo.jpeg')))
-                        <img src="{{ asset('image/logo.jpeg') }}" alt="FreshGreen Logo" class="w-full h-full object-contain">
+                    @if($logoPath)
+                        <img src="{{ asset($logoPath) }}" alt="FreshGreen Logo" class="w-full h-full object-contain">
                     @else
-                        <span class="text-4xl">img src="{{ asset('image/logo.jpeg'</span>
+                        <span class="text-4xl">🥦</span>
                     @endif
-                </div
+                </div>
 
                 <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight mb-4">
                     FreshGreen Belanja Sayur Segar
