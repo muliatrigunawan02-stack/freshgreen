@@ -12,7 +12,15 @@
     <!-- Header Navbar -->
     <header class="bg-slate-900 text-white shadow-md sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <a href="{{ route('home') }}" class="flex items-center space-x-2 text-emerald-400 font-bold text-xl tracking-wide">
+            <a href="{{ route('home') }}" class="flex items-center space-x-3 text-emerald-400 font-bold text-xl tracking-wide">
+                <!-- Logo Gambar Kecil di Navbar -->
+                @if(file_exists(public_path('images/logo.jpeg')))
+                    <img src="{{ asset('images/logo.jpeg') }}" alt="FreshGreen Logo" class="w-8 h-8 object-contain">
+                @elseif(file_exists(public_path('image/logo.jpeg')))
+                    <img src="{{ asset('image/logo.jpeg') }}" alt="FreshGreen Logo" class="w-8 h-8 object-contain">
+                @else
+                    <span class="text-2xl">🥦</span>
+                @endif
                 <span>FRESH-GREEN</span>
             </a>
             
@@ -43,8 +51,15 @@
         <!-- HERO SECTION -->
         <section class="py-16 md:py-24 px-4 text-center">
             <div class="max-w-3xl mx-auto">
-                <div class="w-24 h-24 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6 shadow-inner">
-                    <span class="text-4xl">🥦</span>
+                <!-- Logo Gambar Utama / Ikona Brokoli -->
+                <div class="w-24 h-24 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6 shadow-inner overflow-hidden p-2">
+                    @if(file_exists(public_path('images/logo.png')))
+                        <img src="{{ asset('images/logo.png') }}" alt="FreshGreen Logo" class="w-full h-full object-contain">
+                    @elseif(file_exists(public_path('image/logo.png')))
+                        <img src="{{ asset('image/logo.png') }}" alt="FreshGreen Logo" class="w-full h-full object-contain">
+                    @else
+                        <span class="text-4xl">🥦</span>
+                    @endif
                 </div>
 
                 <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight mb-4">
@@ -67,7 +82,7 @@
             </div>
         </section>
 
-        <!-- FITUR / LAYANAN PLATFORM (Pengganti Katalog Produk) -->
+        <!-- FITUR / LAYANAN PLATFORM -->
         <section class="py-16 bg-white border-t border-slate-200">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-12">
