@@ -53,14 +53,14 @@
             <div class="max-w-3xl mx-auto">
                 <!-- Logo Gambar Utama / Ikona Brokoli -->
                 <div class="w-24 h-24 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6 shadow-inner overflow-hidden p-2">
-                    @if(file_exists(public_path('images/logo.png')))
-                        <img src="{{ asset('images/logo.png') }}" alt="FreshGreen Logo" class="w-full h-full object-contain">
-                    @elseif(file_exists(public_path('image/logo.png')))
-                        <img src="{{ asset('image/logo.png') }}" alt="FreshGreen Logo" class="w-full h-full object-contain">
+                    @if(file_exists(public_path('images/logo.jpeg')))
+                        <img src="{{ asset('images/logo.jpeg') }}" alt="FreshGreen Logo" class="w-full h-full object-contain">
+                    @elseif(file_exists(public_path('image/logo.jpeg')))
+                        <img src="{{ asset('image/logo.jpeg') }}" alt="FreshGreen Logo" class="w-full h-full object-contain">
                     @else
-                        <span class="text-4xl">🥦</span>
+                        <span class="text-4xl">img src="{{ asset('image/logo.jpeg'</span>
                     @endif
-                </div>
+                </div
 
                 <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight mb-4">
                     FreshGreen Belanja Sayur Segar
