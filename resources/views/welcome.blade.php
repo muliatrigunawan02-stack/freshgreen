@@ -13,7 +13,7 @@
     <header class="bg-slate-900 text-white shadow-md sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <a href="{{ route('home') }}" class="flex items-center space-x-3 text-emerald-400 font-bold text-xl tracking-wide">
-                <!-- Logo Gambar Kecil di Navbar -->
+                <!-- Logo Gambar Kecil di Navbar (Bulat) -->
                 @php
                     $logoPath = null;
                     if (file_exists(public_path('images/logo.jpeg'))) {
@@ -22,11 +22,13 @@
                         $logoPath = 'image/logo.jpeg';
                     } elseif (file_exists(public_path('images/logo.png'))) {
                         $logoPath = 'images/logo.png';
+                    } elseif (file_exists(public_path('image/logo.png'))) {
+                        $logoPath = 'image/logo.png';
                     }
                 @endphp
 
                 @if($logoPath)
-                    <img src="{{ asset($logoPath) }}" alt="FreshGreen Logo" class="w-8 h-8 object-contain">
+                    <img src="{{ asset($logoPath) }}" alt="FreshGreen Logo" class="w-9 h-9 rounded-full object-cover border border-emerald-500/30">
                 @else
                     <span class="text-2xl">🥦</span>
                 @endif
@@ -60,10 +62,10 @@
         <!-- HERO SECTION -->
         <section class="py-16 md:py-24 px-4 text-center">
             <div class="max-w-3xl mx-auto">
-                <!-- Logo Gambar Utama / Icon Brokoli -->
-                <div class="w-24 h-24 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6 shadow-inner overflow-hidden p-2">
+                <!-- Logo Gambar Utama di Hero Section (Bulat Sempurna) -->
+                <div class="w-28 h-28 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md overflow-hidden p-1 border-2 border-emerald-500/20">
                     @if($logoPath)
-                        <img src="{{ asset($logoPath) }}" alt="FreshGreen Logo" class="w-full h-full object-contain">
+                        <img src="{{ asset($logoPath) }}" alt="FreshGreen Logo" class="w-full h-full rounded-full object-cover">
                     @else
                         <span class="text-4xl">🥦</span>
                     @endif
