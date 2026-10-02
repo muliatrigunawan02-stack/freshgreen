@@ -6,6 +6,7 @@ use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ReviewController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,21 +29,24 @@ Route::get('/about', function () {
 Route::get('/produk', [ProductController::class, 'index'])->name('products.index');
 Route::get('/product/{slug}', [ProductController::class, 'show'])->name('products.show');
 
-// 4. Halaman Kontak
+// 4. Fitur Ulasan Produk (Submit Review)
+Route::post('/products/{id}/reviews', [ReviewController::class, 'store'])->name('reviews.store');
+
+// 5. Halaman Kontak
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::post('/contact', [ContactController::class, 'send'])->name('contact.send');
 
-// 5. Keranjang Belanja
+// 6. Keranjang Belanja
 Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
 Route::post('/cart/add/{id}', [CartController::class, 'add'])->name('cart.add');
 Route::delete('/cart/remove/{id}', [CartController::class, 'remove'])->name('cart.remove');
 
-// 6. Dashboard User / Admin
+// 7. Dashboard User / Admin
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-// 7. Fitur Pengguna Autentikasi (Checkout, Profil, & Kelola Admin)
+// 8. Fitur Pengguna Autentikasi (Checkout, Profil, & Kelola Admin)
 Route::middleware('auth')->group(function () {
     
     // Checkout

@@ -32,6 +32,14 @@
     <!-- Main Content -->
     <main class="flex-grow max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full">
         
+        <!-- Alert Notifikasi Sukses -->
+        @if(session('success'))
+            <div class="mb-6 bg-emerald-100 border border-emerald-300 text-emerald-800 px-4 py-3 rounded-2xl text-sm flex justify-between items-center">
+                <span>{{ session('success') }}</span>
+                <button onclick="this.parentElement.remove()" class="font-bold text-emerald-800 hover:text-emerald-900">&times;</button>
+            </div>
+        @endif
+
         <!-- Card Detail Produk -->
         <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-sm border border-slate-100 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             
@@ -145,11 +153,12 @@
             <!-- Formulir Tambah Ulasan Baru -->
             <div class="mt-10 pt-6 border-t border-gray-100">
                 <h3 class="font-bold text-gray-800 text-base mb-4">Tulis Ulasan Anda</h3>
-                <form action="#" method="POST" class="space-y-4">
+                
+                <form action="{{ route('reviews.store', $product->id) }}" method="POST" class="space-y-4">
                     @csrf
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <input type="text" placeholder="Nama Lengkap" class="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500">
-                        <select class="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 text-gray-600">
+                        <input type="text" name="name" required placeholder="Nama Lengkap" class="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                        <select name="rating" required class="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 text-gray-600">
                             <option value="5">Rating: ★★★★★ (Sangat Puas)</option>
                             <option value="4">Rating: ★★★★☆ (Puas)</option>
                             <option value="3">Rating: ★★★☆☆ (Cukup)</option>
@@ -158,9 +167,10 @@
                         </select>
                     </div>
                     <div>
-                        <textarea rows="3" placeholder="Bagikan pengalaman Anda tentang kualitas dan kesegaran produk ini..." class="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"></textarea>
+                        <textarea name="comment" rows="3" required placeholder="Bagikan pengalaman Anda tentang kualitas dan kesegaran produk ini..." class="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"></textarea>
                     </div>
-                    <button type="button" class="bg-slate-900 hover:bg-slate-800 text-white text-sm font-semibold px-6 py-2.5 rounded-xl transition">
+                    
+                    <button type="submit" class="bg-slate-900 hover:bg-slate-800 text-white text-sm font-semibold px-6 py-2.5 rounded-xl transition cursor-pointer">
                         Kirim Ulasan
                     </button>
                 </form>
